@@ -1,0 +1,120 @@
+.cart_ctrl{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+
+.cart_ctrl button{
+    padding: .2em .5em;
+    background-color: rgb(46, 99, 151);
+    color: #fff;
+    border-radius: .3rem;
+    font-weight:600;
+    cursor: pointer;
+}
+.cart-sect h1{
+    display: flex;
+    justify-content: center;
+    margin: .5em auto;
+    font-style: italic;
+}
+
+.items-details{
+    display: flex;
+    gap: 1em;
+    cursor: pointer;
+}
+
+.info-sect{
+    display: flex;
+    margin: 1.6em 1em;
+}
+.money-info{
+    width: 30%;
+    border-radius: .4em;
+    padding: 1em 1.4em;
+    border: 1px solid gray;
+    margin: 1em;
+    
+}
+
+.info-div_item img{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+}
+
+.info-div_item{
+    width: 90%;
+    margin: auto;
+}
+
+.amount-sect {
+    display: flex;
+    gap: 1.2em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* margin: 1em; */
+}
+
+.amount-sect button {
+    padding: .3em;
+    margin: 1.1em 1em;
+    font-weight: 600;
+}
+
+.amount-sect span {
+    font-weight: 600;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.img-and-amount{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 70%;
+}
+.money-segment{
+    display: flex;
+    justify-content: space-between;
+}
+.total{
+    font-size: 2rem;
+}
+
+@media (max-width:1024px) {
+    .info-div {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 60%;
+    }
+
+    .money-info {
+      width: 40%;     
+    
+    }
+
+    .items-details {
+       flex-direction: column; 
+       gap: .2em;    
+    }
+}
+
+@media (max-width:600px) {
+   .info-div{
+    width: 50%;
+   }
+   .money-segment{
+    align-items: center;
+   }
+
+}

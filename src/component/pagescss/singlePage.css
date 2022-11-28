@@ -1,0 +1,112 @@
+.single-page_div{
+    display: flex;
+    padding: 1em 0;
+}
+
+.jeans_div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.jeans_div img{
+    width: 40% ;
+}
+
+.single-page_text{
+    margin-top: 2em;
+    width: 90%;
+}
+.round{
+    width: 20%;
+    height: 30%;
+    padding: .3em 0;
+    background-color: aqua;
+    border:1px solid gray;
+    margin: .5em;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.brown {
+    background-color: brown;
+}
+
+.single-page_seltect-option{
+    display: flex;
+    gap: .5em;
+}
+
+.sign-flex{
+    display: flex;
+    gap: 1.2em;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+}
+
+.sign-flex button{
+    padding: .3em;
+    margin:1.1em 1em;
+    font-weight: 600;
+}
+
+.sign-flex span{
+    font-weight: 600;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.round-color_flex{
+    display: flex;
+}
+
+.naira{
+    text-decoration: line-through;
+}
+
+.price-sect{
+    display: flex;
+    gap: .5em;
+}
+
+.single-page_div {
+    width: 96%;
+
+}
+
+.control_div{
+    display: flex;
+    align-items: center;
+}
+
+.control_div button{
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+@media (max-width:1024px) {
+    .jeans_div img {
+            width: 80%;
+        }
+   .single-page_text {
+      
+       width: 90%;
+       margin: auto;
+   }
+  
+}
+
+@media (max-width:600px) {
+    
+.single-page_div{
+    flex-direction: column;
+}
+
+}

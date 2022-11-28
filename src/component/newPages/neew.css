@@ -1,0 +1,34 @@
+.new-sect{
+    height: 50vh;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.new-message{
+    width: 50%;
+    background-color: #fff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-message input{
+    flex: 8;
+    outline: none;
+    border: none;
+    padding-left: 1em;
+}
+
+.send-inp{
+    width: 10%;
+}
+
+svg.Arrow_icon{
+    background-color: aquamarine;
+    padding: 0 .2em;
+    flex: 1;
+}
