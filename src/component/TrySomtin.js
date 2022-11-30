@@ -52,7 +52,7 @@ const TrySomtin = (props) => {
        </div>
       {/* <button onClick={()=>setDisplayFilter(popularProducts)}>all</button> */}
       
-          <button onClick={() => {displayFunc(item.category) }}>tyr</button>
+          {/* <button onClick={() => {displayFunc(item.category) }}>tyr</button> */}
           <div className='prod' >
                   <div className='product' key={item.id}>
                       <Link to={`/singlePage/${item.id}`}>

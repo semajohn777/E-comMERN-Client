@@ -21,9 +21,16 @@ p{
 }
 
 .array_btn{
-  margin: auto 1em;
+  margin:  1em;
   padding: .5em;
   background-color: #2E6397;
   color: white;
   border-radius: .4em;
+  border: 1px solid blueviolet; 
+}
+
+.array_btn:hover{
+    background-color: transparent;
+    color: #2E6397;
+    border: 1px solid #2E6397;
 }
