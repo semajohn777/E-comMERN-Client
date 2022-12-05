@@ -41,6 +41,12 @@ li{
     border: none;
 }
 
+.shop{
+    font-style: italic;
+    color: #3F99FB;;
+    font-size: 1em;
+}
+
 @media (max-width: 600px) {
     .fieldset input {
           width: 9rem;

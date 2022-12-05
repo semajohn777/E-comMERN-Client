@@ -1,21 +1,52 @@
-// import React from 'react'
+import React from 'react'
+import { FiArrowRightCircle } from 'react-icons/fi'
+import {  useNavigate } from 'react-router-dom'
 
-// import {useParams} from 'react-router-dom'
-// import {popularProducts} from "../component/Data"
-// import "./newPages/neew.css"
-// export default function Specific ({ match }) {
-//     // const singleProductId = match.params.id
-//   const params = useParams();
-//   const singleProd = popularProducts.find(single => single.id == params.id)
-  
-//   return (
-//       <div>
-//           specific 
-//       <h1>Product Name : {params.id}</h1>
-//       <h2>Product Name: {singleProd.name}</h2>
-//       <h3>Price: <span className='naira'>N</span> {singleProd.price}</h3>
-//       <img src={singleProd.img} alt="" />
-//     </div>
-//   )
-// }
+const Specific = (props) => {
+  const catHandler = (e) => {
+    props.onFilterCat(e.target.value)
+  }
+     const navigate = useNavigate()
+    const navigatorHandler = () => {
+        navigate(`/details`)
+    }
+  return (
+    <div style={{marginBottom: "1em"}}>
+      <div className="space">
+        <div className="filter_flex">
+          <h4>Filter categories</h4>
+          <select
+            name="sex"
+            id=""
+            value={props.onShowFilter}
+            onChange={catHandler}
+          >
+            <option value="all">All</option>
+            <option className="categories_opt" value="men">
+              Fashion
+            </option>
+            <option value="Fashion">Men</option>
+          </select>
 
+          {/* <select name="size"  onChange={catHandler} id="">
+          <option disabled selected>
+            size
+          </option>
+          <option>XS</option>
+          <option>M</option>
+          <option>L</option>
+          <option>Xl</option>
+        </select> */}
+        </div>
+        
+         <button onClick={navigatorHandler}>
+          See more <FiArrowRightCircle />
+          </button>
+        
+      </div>
+      {/* <hr style={{marginBottom: "1em"}} /> */}
+    </div>
+  )
+}
+
+export default Specific

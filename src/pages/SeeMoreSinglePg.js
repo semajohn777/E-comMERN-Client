@@ -1,19 +1,14 @@
-import React, { useContext, useState } from 'react'
-import Footer from '../component/Footer/Footer'
-//import jeans from "../component/images/Jeans-PNG-Image.png"
-import '../component/pagescss/singlePage.css'
+import React, {useState, useContext} from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { popularProducts } from '../component/datas/Data'
 import { CartContext } from '../component/context/CartContext'
+import { DataProduct } from '../component/datas/Data'
+import Footer from '../component/Footer/Footer'
 
-
-const SinglePage = () => {
-    const { tryingContextHandler} = useContext(CartContext)
-
+const SeeMoreSinglePg = () => {
   const params = useParams()
-  const singleProd = popularProducts.find((single) => single.id == params.id)
+    const singleProd = DataProduct.find((single) => single.id == params.id)
+    const { tryingContextHandler} = useContext(CartContext)
   const [count, setCount] = useState(1)
-  // const [addToCart, setAddToCart] = useState(0)
 
   const increase = () => {
     if (count === 10) {
@@ -22,13 +17,7 @@ const SinglePage = () => {
     setCount((prevCount) => prevCount + 1)
   }
 
-  //   const increasingAddToCart = () => {
-  //     // if (count === 10) {
-  //     //     return
-  //     // }
-  //     setCount(prevCount => prevCount + 1)
-  // }
-
+ 
   const decrease = () => {
     if (count === 0) {
       return
@@ -36,12 +25,10 @@ const SinglePage = () => {
     setCount((prevCount) => prevCount - 1)
   }
 
-  // const num = +singleProd.name
-  // console.log(typeof num);
-
+  
   return (
-    <div>
-      <div className="sign-flex">
+      <div>
+          <div className="sign-flex">
         <div className="control_div">
           <button className="sign" onClick={decrease}>
             --
@@ -52,22 +39,22 @@ const SinglePage = () => {
           </button>
         </div>
 
-        <Link to={`/cart/${singleProd.id}`} onClick={()=>tryingContextHandler()}>
+        <Link to={`/cartdetails/${singleProd.id}`} onClick={()=>tryingContextHandler()}>
           <button>Add to Cart</button>
         </Link>
       </div>
       <div className="single-page_div">
         <div className="jeans_div">
-          <img src={singleProd.img} alt="" />
+          <img src={singleProd.image} alt="" />
         </div>
         <div className="single-page_text">
-          <h2>{singleProd.name}</h2>
+          <h2>{singleProd.title}</h2>
           <p>
-           {singleProd.discription}
+            {singleProd.description}
           </p>
           <div className="price-sect">
             <h2 className="naira">N</h2>
-            <h2> {count * singleProd.price}</h2>
+            <h2> {count * singleProd.price * 700}</h2>
           </div>
           <div>
             <p>
@@ -98,4 +85,4 @@ const SinglePage = () => {
   )
 }
 
-export default SinglePage
+export default SeeMoreSinglePg

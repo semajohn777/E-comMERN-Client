@@ -1,4 +1,7 @@
 import React from 'react'
+import { BsTelephone } from "react-icons/bs"
+import { HiOutlineMail } from "react-icons/hi"
+import {FaAddressBook} from "react-icons/fa"
 import "./footer.css"
 
 const Footer = () => {
@@ -6,7 +9,7 @@ const Footer = () => {
       <div id='footer'>
           <footer>
           <div>
-              <h1>Se<span>ma</span></h1>
+              <h1>Se<span>ma</span> <span className='shop'>Shop</span></h1>
               <p>Sema Stores is the leading E-commerce shop online for you and your family for a change and better apperance.</p>
                 <p>Pick the best of the best item.</p>
 
@@ -29,9 +32,9 @@ const Footer = () => {
           
           <div>
               <h2>Contact</h2>
-              <p>No. 13 Shomolu Street, mainland Lagos State. Nigeria</p>
-              <p>+234 7035 295 095</p>
-              <p>johnagbudumhe12@gmail.com</p>
+              <p><FaAddressBook/> No. 13 Shomolu Street, mainland Lagos State. Nigeria</p>
+              <p><BsTelephone/> +234 7035 295 095</p>
+              <p><HiOutlineMail></HiOutlineMail> johnagbudumhe12@gmail.com</p>
               <img src="https://i.ibb.co/Qfvn4z6/payment.png" alt="" />
           </div>
     </footer>

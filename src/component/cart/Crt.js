@@ -5,6 +5,7 @@ import "../pagescss/singlePage.css"
 
 const Crt = (props) => {
   const cartDynamic = props.onCart
+  console.log(cartDynamic);
   const [count, setCount] = useState(1)
   
   const num = 2000

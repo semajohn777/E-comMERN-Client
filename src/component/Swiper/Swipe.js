@@ -3,7 +3,7 @@ import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "./swipe.css"
 
-import {data} from "../Data"
+import {data} from "../datas/Data"
 
 // Import Swiper styles
 import 'swiper/css';
@@ -16,7 +16,7 @@ const Swipe = () => {
 
      const navigate = useNavigate()
     const navigatorHandler = () => {
-        navigate(`/details/${Math.random()}`)
+        navigate(`/details`)
     }
   return (
     <Swiper

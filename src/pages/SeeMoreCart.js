@@ -2,23 +2,19 @@ import React from 'react'
 import Footer from '../component/Footer/Footer'
 import "../component/cart/cart.css"
 import "../component/pagescss/singlePage.css"
-import Crt from '../component/cart/Crt'
 import { useNavigate, useParams } from 'react-router-dom'
-import {popularProducts, DataProduct} from "../component/datas/Data"
+import { DataProduct} from "../component/datas/Data"
+import ProdCart from '../component/cart/ProdCart'
 
-
-
-const Cart = () => {
-    const param = useParams();
+const SeeMoreCart = () => {
+     const param = useParams();
     console.log(param);
-    const singleProd = popularProducts.find((single) => single.id == param.id)
     const detailsLink = DataProduct.find((single) => single.id == param.id)
 
     const navigate = useNavigate()
     const navigatorHandler = () => {
         navigate(`/details`)
     }
-
   return (
       <div>
           <div className='cart-sect'>
@@ -32,11 +28,11 @@ const Cart = () => {
                   </div>
                   <button onClick={()=> navigate("/")} >Cheak Out</button>
               </div>
-              <Crt onCart={singleProd ? singleProd : detailsLink } />
+              <ProdCart onDetailsLink={ detailsLink } />
           </div>
           <Footer/>
     </div>
   )
 }
 
-export default Cart
+export default SeeMoreCart

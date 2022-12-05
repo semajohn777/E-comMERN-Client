@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined'
 import Badge from '@mui/material/Badge'
 import './navbar.css'
 import { Navigate, Link } from 'react-router-dom'
+import { CartContext } from '../context/CartContext'
+
 
 const Navbar = () => {
+  const {tryingContext} = useContext(CartContext)
   const [showNavLink, setShowNavLink] = useState(true)
 
   const handleLogoutNavLink = () => {
@@ -21,7 +24,7 @@ const Navbar = () => {
         <div>
           <h1>
             <Link to={'/'}>
-              Se<span>ma</span>
+              Se<span>ma</span> <span className='shop'>Shop</span>
             </Link>
           </h1>
         </div>
@@ -38,6 +41,7 @@ const Navbar = () => {
                 </li>
               </Link>
             )}
+            
             {showNavLink && (
               <li className="li">
                 <Link to={'/register'}>
@@ -45,6 +49,8 @@ const Navbar = () => {
                 </Link>
               </li>
             )}
+
+           
             {showNavLink && (
               <li>
                 <Link onClick={handleDispaly} to={'/'}>
@@ -54,11 +60,12 @@ const Navbar = () => {
             )}
             {!showNavLink && (
               <Link onClick={handleLogoutNavLink} to={"/"}>
-                <Badge badgeContent={4} color="secondary">
+                <Badge badgeContent={tryingContext} color="secondary">
                   <AddShoppingCartOutlinedIcon color="action" />
                 </Badge>
               </Link>
             )}
+            
           </ul>
         </div>
       </nav>
