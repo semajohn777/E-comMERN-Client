@@ -1,4 +1,4 @@
-import { Navigation, Pagination } from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "./swipe.css"
@@ -9,6 +9,7 @@ import {data} from "../datas/Data"
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import "swiper/css/autoplay"
 import { useNavigate } from 'react-router-dom';
 
 
@@ -21,12 +22,15 @@ const Swipe = () => {
   return (
     <Swiper
       // install Swiper modules
-      modules={[Navigation, Pagination]}
+      modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={50}
       slidesPerView={1}
       navigation
       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
+          scrollbar={{ draggable: true }}
+           autoplay={{
+          delay: 4500
+        }}
       className="sect-one_div">
           {data.map((item) => (
               <SwiperSlide key={item.id}>

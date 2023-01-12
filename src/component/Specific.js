@@ -15,36 +15,23 @@ const Specific = (props) => {
       <div className="space">
         <div className="filter_flex">
           <h4>Filter categories</h4>
-          <select
-            name="sex"
-            id=""
-            value={props.onShowFilter}
-            onChange={catHandler}
-          >
-            <option value="all">All</option>
-            <option className="categories_opt" value="men">
-              Fashion
-            </option>
-            <option value="Fashion">Men</option>
-          </select>
-
-          {/* <select name="size"  onChange={catHandler} id="">
-          <option disabled selected>
-            size
+        <select  onChange={catHandler}>
+          <option value="all">All Products</option>
+          <option className="categories_opt" value="men's clothing">
+            men's clothing
           </option>
-          <option>XS</option>
-          <option>M</option>
-          <option>L</option>
-          <option>Xl</option>
-        </select> */}
+          <option value="women's clothing">Women</option>
+          <option value="electronics">Electronics</option>
+            <option value="jewelery">Jewelery</option>
+            <option value="wear">Wear</option>
+        </select>
         </div>
         
-         <button onClick={navigatorHandler}>
+         <button className='seeMore' onClick={navigatorHandler}>
           See more <FiArrowRightCircle />
           </button>
         
       </div>
-      {/* <hr style={{marginBottom: "1em"}} /> */}
     </div>
   )
 }

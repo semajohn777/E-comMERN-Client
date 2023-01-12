@@ -7,11 +7,12 @@
 
 .cart_ctrl button{
     padding: .2em .5em;
-    background-color: rgb(46, 99, 151);
+    background-color: #2e6397;
     color: #fff;
     border-radius: .3rem;
     font-weight:600;
     cursor: pointer;
+    border: 1px solid blueviolet;
 }
 .cart-sect h1{
     display: flex;
@@ -29,6 +30,7 @@
 .info-sect{
     display: flex;
     margin: 1.6em 1em;
+    
 }
 .money-info{
     width: 30%;
@@ -40,16 +42,25 @@
 }
 
 .info-div_item img{
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 15%;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
     object-fit: contain;
 }
 
 .info-div_item{
     width: 90%;
     margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: .8em auto;
+    border: 1px solid white;
+    border-radius: .4em;
+    padding: .9em;
+}
+.info-div_item p{
+    margin: .5em;
 }
 
 .amount-sect {
@@ -57,7 +68,7 @@
     gap: 1.2em;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     /* margin: 1em; */
 }
 
@@ -75,13 +86,17 @@
 
 .img-and-amount{
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 }
 
+
+
 .info-div{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+display: flex;
+flex-wrap: wrap;
     width: 70%;
+    background-color: #2e6397;
+    border-radius: .4em;
 }
 .money-segment{
     display: flex;
@@ -89,6 +104,14 @@
 }
 .total{
     font-size: 2rem;
+}
+.cal{
+    display: flex;
+}
+
+.close:hover{
+   cursor: pointer;
+   color: #ff0000; 
 }
 
 @media (max-width:1024px) {
@@ -107,14 +130,30 @@
        flex-direction: column; 
        gap: .2em;    
     }
+    .info-div_item{
+        flex-wrap: wrap;
+    }
 }
 
 @media (max-width:600px) {
    .info-div{
-    width: 50%;
+    width: 100%;
+
    }
    .money-segment{
     align-items: center;
+   }
+   .info-div_item{
+    flex-wrap: wrap;
+   }
+   .info-sect{
+    flex-direction: column;
+   }
+   .money-info{
+    width: 100%;
+   }
+   .cart_ctrl button{
+    height: 3em;
    }
 
 }

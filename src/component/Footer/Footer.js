@@ -3,7 +3,7 @@ import { BsTelephone } from "react-icons/bs"
 import { HiOutlineMail } from "react-icons/hi"
 import {FaAddressBook} from "react-icons/fa"
 import "./footer.css"
-
+import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
       <div id='footer'>
@@ -18,11 +18,11 @@ const Footer = () => {
               <div>
             <h2 className='footer_title'>Links</h2>
             <ul className='Footer_items'>
-              <li><a className='footer__item' href="">Home</a></li>
+              <li><Link to={"/"} className='footer__item'>Home</Link></li>
               <li><a className='footer__item' href="">Men Fashion</a></li>
               <li><a className='footer__item' href="">Accessories</a></li>
               <li><a className='footer__item' href="">Order Tracking</a></li>
-              <li><a className='footer__item' href="">Cart</a></li>
+              <li><Link to={'/prodcart'} className='footer__item' href="">Cart</Link></li>
               <li><a className='footer__item' href="">Women Fashion</a></li>
               <li><a className='footer__item' href="">My Account</a></li>
               <li><a className='footer__item' href="">Children Wears</a></li>

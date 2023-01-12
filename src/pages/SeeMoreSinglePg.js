@@ -1,13 +1,19 @@
-import React, {useState, useContext} from 'react'
-import { useParams, Link } from 'react-router-dom'
-import { CartContext } from '../component/context/CartContext'
+import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { DataProduct } from '../component/datas/Data'
 import Footer from '../component/Footer/Footer'
+import { useCart } from "react-use-cart";
+
 
 const SeeMoreSinglePg = () => {
+  const {addItem} = useCart()
   const params = useParams()
-    const singleProd = DataProduct.find((single) => single.id == params.id)
-    const { tryingContextHandler} = useContext(CartContext)
+  const singleProd = DataProduct.find((single) => single.id == params.id)
+  const logingtoConsole = () => {
+     addItem(singleProd)
+    alert('add to cart')
+  }
+ 
   const [count, setCount] = useState(1)
 
   const increase = () => {
@@ -17,7 +23,6 @@ const SeeMoreSinglePg = () => {
     setCount((prevCount) => prevCount + 1)
   }
 
- 
   const decrease = () => {
     if (count === 0) {
       return
@@ -25,10 +30,9 @@ const SeeMoreSinglePg = () => {
     setCount((prevCount) => prevCount - 1)
   }
 
-  
   return (
-      <div>
-          <div className="sign-flex">
+    <div>
+      <div className="sign-flex">
         <div className="control_div">
           <button className="sign" onClick={decrease}>
             --
@@ -38,10 +42,13 @@ const SeeMoreSinglePg = () => {
             +
           </button>
         </div>
-
-        <Link to={`/cartdetails/${singleProd.id}`} onClick={()=>tryingContextHandler()}>
-          <button>Add to Cart</button>
-        </Link>
+          <button
+            onClick={() => logingtoConsole()}
+          >
+            Add to Cart
+          </button>
+       
+       
       </div>
       <div className="single-page_div">
         <div className="jeans_div">
@@ -49,9 +56,7 @@ const SeeMoreSinglePg = () => {
         </div>
         <div className="single-page_text">
           <h2>{singleProd.title}</h2>
-          <p>
-            {singleProd.description}
-          </p>
+          <p>{singleProd.description}</p>
           <div className="price-sect">
             <h2 className="naira">N</h2>
             <h2> {count * singleProd.price * 700}</h2>

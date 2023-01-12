@@ -33,3 +33,9 @@ svg.Arrow_icon{
     padding: 0 .2em;
     flex: 1;
 }
+@media (max-width: 1024px) {
+
+    .new-sect{
+        height: 30vh;
+    }
+}

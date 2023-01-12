@@ -98,10 +98,12 @@
 }
 
 
-@media (max-width:1024px) {
-    .prod-grid {    
+ @media (max-width:1024px) {
+    .prod-grid {  
+            display: grid;  
             grid-template-columns: repeat(2, 1fr);
             gap: 2em;
+            
         }
 }
 
@@ -117,6 +119,9 @@
     }
     .prod-icons{
         justify-content: center;
+    }
+    .filter_flex h4{
+        display: none;
     }
     
 }

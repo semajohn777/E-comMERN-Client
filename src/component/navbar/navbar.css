@@ -47,8 +47,17 @@ li{
     font-size: 1em;
 }
 
+
 @media (max-width: 600px) {
     .fieldset input {
-          width: 9rem;
+        width: 4rem;
+    }
+   
+}
+@media (max-width: 327px) {
+
+    .fieldset input {
+          display: none;
         }
+    
 }
